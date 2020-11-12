@@ -49,13 +49,13 @@
                         <!-- LIST OF CONTACTS -->
                         <ul class="contacts-list">
                             <!-- SINGLE CONTACT-CARD -->
-                            <li class="contact-card" v-for="card in 3">
+                            <li class="contact-card" v-for="contact in userContacts">
                                 <!-- START CONTACT IMG SX -->
                                 <div class="contact-img">
-                                    <img src="https://picsum.photos/id/237/536/354" alt="">
+                                    <img :src="contact.avatar" alt="">
                                 </div>
                                 <div class="contact-info">
-                                    <h2>Nome</h2>
+                                    <h2>{{ contact.name }}</h2>
                                     <span>Messaggio</span>
                                     <span class="time">14:15</span>
                                 </div>
@@ -74,7 +74,13 @@
 
                     <!-- START CX with messagges -->
                     <div class="messages-container">
-                        messaggio
+                        <!-- LIST OF MESSAGES -->
+                        <ul class="messages-list">
+                            <!-- SINGLE MESSAGE-CARD -->
+                            <li class="message-card" v-for="message in 10">
+
+                            </li><!-- END SINGLE MESSAGE-CARD -->
+                        </ul>
                     </div><!-- END message-container -->
 
                     <!-- START BTM message-bar -->
