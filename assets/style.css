@@ -20,11 +20,13 @@ ul {
 .app-header {
     height: 60px;
     background-color: #EDEDED;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* #2-fold SSSSS .CONTACT-CARD SSSSS */
 .contact-card {
     height: 73px;
+    cursor: pointer;
 }
 .contact-card:hover {
     background-color: rgb(242, 242, 242);
@@ -101,7 +103,6 @@ h2 { /* Contact-name */
 }
 
 /* #2-fold SSSSS .contacts-wrapper SSSSS */
-
 .contacts-wrapper {
     width: 30%;
     height: 100%;
@@ -109,7 +110,7 @@ h2 { /* Contact-name */
 }
 
 .contacts-nav {
-
+    border-top-left-radius: 5px;
 }
 
 .notification {
@@ -126,6 +127,7 @@ h2 { /* Contact-name */
 .search-bar input {
     width: 100%;
 }
+
 .contacts-list {
     height: calc(100% - 50px); /* search-bar 50px */
     overflow-y: auto;
@@ -142,11 +144,24 @@ h2 { /* Contact-name */
 }
 
 .messages-nav {
-
+    border-top-right-radius: 5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .messages-container {
     height: calc(100% - 120px); /* messages-nav 60px, messages-bar 60px */
+    background-color: rgb(229, 221, 213);
+    position: relative;
+}
+.messages-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
+    filter: opacity(20%);
 }
 
 .messages-bar {
