@@ -31,7 +31,12 @@
                 <aside class="contacts-wrapper">
                     <!-- START TOP WRAPPER with user info -->
                     <nav class="app-header contacts-nav">
-                        contacts nav
+                        <!-- USER IMG SX -->
+                        <div class="user-img">
+                            <img src="img/_user.jpg" alt="">
+                        </div>
+
+                        <div class="icons"></div>
                     </nav><!-- END contacts-nav -->
 
                     <!-- START CX WRAPPER with notification -->
@@ -51,7 +56,7 @@
                             <!-- SINGLE CONTACT-CARD -->
                             <li class="contact-card" v-for="contact in userContacts">
                                 <!-- START CONTACT IMG SX -->
-                                <div class="contact-img">
+                                <div class="user-img">
                                     <img :src="contact.avatar" alt="">
                                 </div>
                                 <div class="contact-info">
@@ -69,19 +74,43 @@
                 <main class="messages-wrapper">
                     <!-- START TOP  -->
                     <nav class="app-header messages-nav">
-                        message nav
+                        <!-- LEFT DIV name and img of current contact -->
+                        <div class="current-contact">
+
+                        </div><!-- END current contact -->
+
+                        <div class="icons"></div>
+
                     </nav><!-- END message-nav -->
 
-                    <!-- START CX with messagges -->
                     <div class="messages-container">
+                        <div class="overlay"></div>
+
                         <!-- LIST OF MESSAGES -->
                         <ul class="messages-list">
                             <!-- SINGLE MESSAGE-CARD -->
-                            <li class="message-card" v-for="message in 10">
+                            <li class="message-card">
+                                <span class="message-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                                <span class="time">14:15</span>
+                            </li><!-- END SINGLE MESSAGE-CARD -->
 
+                            <li class="message-card send">
+                                <span class="message-text">Ok.</span>
+                                <span class="time">14:15</span>
+                            </li><!-- END SINGLE MESSAGE-CARD -->
+
+                            <li class="message-card">
+                                <span class="message-text">Ok.</span>
+                                <span class="time">14:15</span>
+                            </li><!-- END SINGLE MESSAGE-CARD -->
+
+                            <!-- SINGLE MESSAGE-CARD -->
+                            <li class="message-card send">
+                                <span class="message-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                                <span class="time">14:15</span>
                             </li><!-- END SINGLE MESSAGE-CARD -->
                         </ul>
-                    </div><!-- END message-container -->
+                    </div>
 
                     <!-- START BTM message-bar -->
                     <div class="messages-bar">

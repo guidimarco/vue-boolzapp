@@ -23,6 +23,22 @@ ul {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.user-img {
+    width: 75px;
+    height: 100%;
+    float: left;
+    display: flex;
+}
+
+.user-img img {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+}
+
 /* #2-fold SSSSS .CONTACT-CARD SSSSS */
 .contact-card {
     height: 73px;
@@ -30,22 +46,6 @@ ul {
 }
 .contact-card:hover {
     background-color: rgb(242, 242, 242);
-}
-
-.contact-img {
-    width: 75px;
-    height: 100%;
-    float: left;
-    display: flex;
-}
-
-.contact-img img {
-    width: 49px;
-    height: 49px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    margin: auto;
 }
 
 .contact-info {
@@ -79,6 +79,34 @@ h2 { /* Contact-name */
     right: 10px;
 }
 /* #/2-fold> EEEEE .CONTACT-CARD EEEEE */
+
+/* #2-fold SSSSS .MESSAGE-CARD SSSSS */
+.message-card {
+    display: inline-block;
+    max-width: 80%;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 10px;
+    padding: 6px 7px 8px 9px;
+}
+.message-card.send {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+}
+
+.message-card .message-text {
+    font-size: 14px;
+    color: #303030;
+    margin-right: 20px;
+}
+
+.message-card .time {
+    font-size: 11px;
+    color: #00000073;
+}
+
+/* #/2-fold> EEEEE .MESSAGE-CARD EEEEE */
+
 
 /* </1-fold> EEEEE ALL DOC CLASSES EEEEE */
 
@@ -115,6 +143,13 @@ h2 { /* Contact-name */
     border-top-left-radius: 5px;
 }
 
+.contacts-nav .icons {
+    height: 100%;
+    width: 100px;
+    background-color: green;
+    float: right;
+}
+
 .notification {
     height: 90px;
     background-color: #9DE1FE;
@@ -148,22 +183,37 @@ h2 { /* Contact-name */
 .messages-nav {
     border-top-right-radius: 5px;
     border-left: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+}
+.messages-nav .current-contact {
+    height: 100%;
+    width: 100px;
+    background-color: red;
+}
+.messages-nav .icons {
+    height: 100%;
+    width: 100px;
+    background-color: green;
 }
 
 .messages-container {
     height: calc(100% - 120px); /* messages-nav 60px, messages-bar 60px */
-    background-color: rgb(229, 221, 213);
+    overflow-y: auto;
     position: relative;
-}
-.messages-container::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     background-image: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
-    filter: opacity(20%);
+    background-color: rgb(229, 221, 213);
+    background-size: auto;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    /* filter: opacity(20%); */
+    padding: 10px 20px;
+}
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .messages-bar {
