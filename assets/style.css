@@ -36,11 +36,21 @@
 /* <1-fold SSSSS #ROOT SSSSS */
 #root {
     height: 100vh;
-    background-color: red;
+    background: linear-gradient(to bottom, #00BFA5 35%, #D6DBD9 0%, #D6DBD9);
+    display: flex;
 }
 
-/* #2-fold SSSSS region SSSSS */
+/* #2-fold SSSSS .message-container SSSSS */
+.message-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 17px 50px 0 rgba(0,0,0,.19), 0 12px 15px 0 rgba(0,0,0,.24);
+    margin: auto;
+}
 
-/* #/2-fold EEEEE endregion EEEEE */
+/* #/2-fold EEEEE .message-container EEEEE */
 
 /* </1-fold> EEEEE #ROOT EEEEE */
