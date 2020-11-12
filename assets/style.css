@@ -14,6 +14,12 @@ ul {
     list-style-type: none;
 }
 
+/*
+h1 undefined
+h2 contacts-name
+h3 notification
+*/
+
 /* </1-fold> EEEEE RESET E NORMALIZZAZIONE EEEEE */
 
 /* <1-fold SSSSS ALL DOC CLASSES SSSSS */
@@ -37,6 +43,26 @@ ul {
     object-fit: cover;
     object-position: center;
     margin: auto;
+    cursor: pointer;
+}
+
+.icons {
+    color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+}
+.icons i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons i:hover {
+    background-color: #D5D5D5;
 }
 
 /* #2-fold SSSSS .CONTACT-CARD SSSSS */
@@ -48,7 +74,7 @@ ul {
     background-color: rgb(242, 242, 242);
 }
 
-.contact-info {
+.contact-card .contact-info {
     width: calc(100% - 75px);
     height: 100%;
     position: relative;
@@ -67,12 +93,12 @@ h2 { /* Contact-name */
     font-weight: 400;
 }
 
-.contact-info span {
+.contact-card .contact-info span {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
 }
 
-.contact-info .time {
+.contact-card .contact-info .time {
     font-size: 12px;
     position: absolute;
     top: 10px;
@@ -124,7 +150,7 @@ h2 { /* Contact-name */
 /* <1-fold SSSSS .app-container SSSSS */
 .app-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 1000px;
     height: 90%;
     border-radius: 5px;
     background-color: white;
@@ -134,7 +160,7 @@ h2 { /* Contact-name */
 
 /* #2-fold SSSSS .contacts-wrapper SSSSS */
 .contacts-wrapper {
-    width: 30%;
+    width: 35%;
     height: 100%;
     float: left;
 }
@@ -145,14 +171,35 @@ h2 { /* Contact-name */
 
 .contacts-nav .icons {
     height: 100%;
-    width: 100px;
-    background-color: green;
     float: right;
+    justify-content: flex-end;
 }
 
 .notification {
     height: 90px;
     background-color: #9DE1FE;
+    color: #303030F5;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 13px;
+}
+.notification:hover span {
+    text-decoration: underline;
+}
+.notification .icons i {
+    width: 50px;
+    height: 50px;
+    color: #9DE1FE;
+    background-color: white;
+}
+h3 {
+    font-size: 15px;
+    font-weight: 400;
+}
+.notification .contact-info span {
+    font-size: 14px;
 }
 
 .contacts {
@@ -175,7 +222,7 @@ h2 { /* Contact-name */
 
 /* #2-fold SSSSS .messages-wrapper SSSSS */
 .messages-wrapper {
-    width: 70%;
+    width: 65%;
     height: 100%;
     float: left;
 }
@@ -188,13 +235,14 @@ h2 { /* Contact-name */
 }
 .messages-nav .current-contact {
     height: 100%;
-    width: 100px;
-    background-color: red;
+    display: flex;
+}
+.messages-nav .current-contact-name {
+    display: flex;
+    align-items: center;
 }
 .messages-nav .icons {
     height: 100%;
-    width: 100px;
-    background-color: green;
 }
 
 .messages-container {
