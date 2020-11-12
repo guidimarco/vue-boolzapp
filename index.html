@@ -62,8 +62,11 @@
                     <!-- START BTM WRAPPER with contacs -->
                     <div class="contacts">
                         <!-- START TOP search bar -->
-                        <div class="search-bar">
-                            <input type="search" name="" value="">
+                        <div class="search-bar input-bar">
+                            <div class="icons">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat">
                         </div><!-- END search bar -->
 
                         <!-- LIST OF CONTACTS -->
@@ -137,8 +140,19 @@
                     </div>
 
                     <!-- START BTM message-bar -->
-                    <div class="messages-bar">
-                        <input type="text" name="" value="">
+                    <div class="messages-bar input-bar">
+                        <!-- LEFT emoji and attachment -->
+                        <div class="icons">
+                            <i class="far fa-grin-alt"></i>
+                            <i class="fas fa-paperclip"></i>
+                        </div><!-- END LEFT icons -->
+
+                        <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+
+                        <!-- RIGHT enter -->
+                        <div class="icons toggle">
+                            <i class="fas fa-microphone"></i>
+                        </div><!-- END RIGHT icons -->
                     </div><!-- END message-bar -->
 
                 </main><!-- END .message-wrapper -->

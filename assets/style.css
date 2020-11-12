@@ -65,6 +65,30 @@ h3 notification
     background-color: #D5D5D5;
 }
 
+/* #2-fold SSSSS .INPUT-BAR SSSSS */
+.input-bar {
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.input-bar .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-bar input {
+    font-size: 16px;
+    height: 42px;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 0 20px;
+}
+.input-bar input:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+/* #/2-fold> EEEEE .INPUT-BAR EEEEE */
+
 /* #2-fold SSSSS .CONTACT-CARD SSSSS */
 .contact-card {
     height: 73px;
@@ -205,11 +229,26 @@ h3 {
 .contacts {
     height: calc(100% - 150px); /* contacts-nav 60px, notification 90px */
 }
+
 .search-bar {
     height: 50px;
+    justify-content: center;
+}
+.search-bar .icons {
+    height: 34px;
+    background-color: white;
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+.search-bar .icons i:hover {
+    background-color: unset;
 }
 .search-bar input {
-    width: 100%;
+    width: 80%;
+    font-size: 14px;
+    height: 34px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .contacts-list {
@@ -266,6 +305,15 @@ h3 {
 
 .messages-bar {
     height: 60px;
+}
+.messages-bar .icons {
+    width: 20%;
+}
+.messages-bar .icons.toggle {
+    width: 10%;
+}
+.messages-bar input {
+    width: 70%;
 }
 
 /* #/2-fold EEEEE .messages-wrapper EEEEE */
