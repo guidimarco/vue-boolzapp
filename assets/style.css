@@ -287,20 +287,19 @@ h3 {
 .messages-container {
     height: calc(100% - 120px); /* messages-nav 60px, messages-bar 60px */
     overflow-y: auto;
-    position: relative;
-    background-image: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
+    /* background-color: rgb(229, 221, 213); */
+}
+.messages-list {
     background-color: rgb(229, 221, 213);
+    background-image: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
     background-size: auto;
     background-attachment: fixed;
     background-repeat: repeat;
-    /* filter: opacity(20%); */
-    padding: 10px 20px;
-}
-.messages-list {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+    padding: 10px 20px;
 }
 
 .messages-bar {
