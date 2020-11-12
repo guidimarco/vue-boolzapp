@@ -9,6 +9,9 @@
 /* </1-fold> EEEEE RESET E NORMALIZZAZIONE EEEEE */
 
 /* <1-fold SSSSS ALL DOC CLASSES SSSSS */
+.app-header {
+    height: 100px;
+}
 
 /* #2-fold SSSSS SYMBOLS SSSSS */
 
@@ -33,15 +36,14 @@
 /* ----- HTML ----- */
 /* ---------------- */
 /* ---------------- */
-/* <1-fold SSSSS #ROOT SSSSS */
 #root {
     height: 100vh;
     background: linear-gradient(to bottom, #00BFA5 35%, #D6DBD9 0%, #D6DBD9);
     display: flex;
 }
 
-/* #2-fold SSSSS .message-container SSSSS */
-.message-container {
+/* <1-fold SSSSS .app-container SSSSS */
+.app-container {
     width: 90%;
     max-width: 800px;
     height: 90%;
@@ -51,6 +53,47 @@
     margin: auto;
 }
 
-/* #/2-fold EEEEE .message-container EEEEE */
+/* #2-fold SSSSS .contacts-wrapper SSSSS */
+.contacts-wrapper {
+    width: 30%;
+    height: 100%;
+    background-color: red;
+    float: left;
+}
 
-/* </1-fold> EEEEE #ROOT EEEEE */
+.contacts-nav {
+    background-color: purple;
+}
+
+.notification {
+    height: 100px;
+    background-color: pink;
+}
+
+.contacts {
+    height: calc(100% - 200px); /* contacts-nav 100px, notification 100px */
+    background-color: lightgray;
+}
+
+/* #/2-fold EEEEE .contacts-wrapper EEEEE */
+
+/* #2-fold SSSSS .messages-wrapper SSSSS */
+.messages-wrapper {
+    width: 70%;
+    height: 100%;
+    background-color: green;
+    float: left;
+}
+
+.messages-nav {
+    background-color: orange;
+}
+
+.messages-container {
+    height: calc(100% - 100px); /* .messages-nav 100px */
+    background-color: yellow;
+}
+
+/* #/2-fold EEEEE .messages-wrapper EEEEE */
+
+/* </1-fold> EEEEE .app-container EEEEE */
