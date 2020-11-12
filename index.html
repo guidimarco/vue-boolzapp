@@ -7,7 +7,8 @@
         <!-- favicon -->
         <!-- <link rel="shortcut icon" href=".ico"> -->
 
-        <!-- font: tipo, weight -->
+        <!-- font: Cantarell, 400/700 -->
+        <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
 
         <!-- icone - fontawesome -->
 
@@ -40,7 +41,26 @@
 
                     <!-- START BTM WRAPPER with contacs -->
                     <div class="contacts">
-                        contatti
+                        <!-- START TOP search bar -->
+                        <div class="search-bar">
+                            <input type="search" name="" value="">
+                        </div><!-- END search bar -->
+
+                        <!-- LIST OF CONTACTS -->
+                        <ul class="contacts-list">
+                            <!-- SINGLE CONTACT-CARD -->
+                            <li class="contact-card" v-for="card in 3">
+                                <!-- START CONTACT IMG SX -->
+                                <div class="contact-img">
+                                    <img src="https://picsum.photos/id/237/536/354" alt="">
+                                </div>
+                                <div class="contact-info">
+                                    <h2>Nome</h2>
+                                    <span>Messaggio</span>
+                                    <span class="time">14:15</span>
+                                </div>
+                            </li><!-- END SINGLE CONTACT-CARD -->
+                        </ul>
                     </div><!-- END contacts -->
 
                 </aside><!-- END .contacts-wrapper -->
@@ -56,6 +76,11 @@
                     <div class="messages-container">
                         messaggio
                     </div><!-- END message-container -->
+
+                    <!-- START BTM message-bar -->
+                    <div class="messages-bar">
+                        <input type="text" name="" value="">
+                    </div><!-- END message-bar -->
 
                 </main><!-- END .message-wrapper -->
             </div><!-- END .app-container -->

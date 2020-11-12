@@ -6,28 +6,75 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Cantarell', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
 /* </1-fold> EEEEE RESET E NORMALIZZAZIONE EEEEE */
 
 /* <1-fold SSSSS ALL DOC CLASSES SSSSS */
 .app-header {
-    height: 100px;
+    height: 60px;
+    background-color: #EDEDED;
 }
 
-/* #2-fold SSSSS SYMBOLS SSSSS */
+/* #2-fold SSSSS .CONTACT-CARD SSSSS */
+.contact-card {
+    height: 73px;
+}
+.contact-card:hover {
+    background-color: rgb(242, 242, 242);
+}
 
-/* #/2-fold> EEEEE SYMBOLS EEEEE */
+.contact-img {
+    width: 75px;
+    height: 100%;
+    float: left;
+    display: flex;
+}
 
-/* #2-fold SSSSS LINKS SSSSS */
+.contact-img img {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin: auto;
+}
 
-/* #/2-fold> EEEEE LINKS EEEEE */
+.contact-info {
+    width: calc(100% - 75px);
+    height: 100%;
+    position: relative;
+    border-top: 1px solid rgb(242, 242, 242);
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-card:first-child .contact-info { /* No border-top */
+    border-top: 0px solid rgb(242, 242, 242);
+}
 
-/* #2-fold SSSSS QUOTE SSSSS */
+h2 { /* Contact-name */
+    font-size: 17px;
+    font-weight: 400;
+}
 
-/* #/2-fold> EEEEE QUOTE EEEEE */
+.contact-info span {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
 
-/* #2-fold SSSSS BTNS SSSSS */
-
-/* #/2-fold> EEEEE BTNS EEEEE */
+.contact-info .time {
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/* #/2-fold> EEEEE .CONTACT-CARD EEEEE */
 
 /* </1-fold> EEEEE ALL DOC CLASSES EEEEE */
 
@@ -54,26 +101,36 @@
 }
 
 /* #2-fold SSSSS .contacts-wrapper SSSSS */
+
 .contacts-wrapper {
     width: 30%;
     height: 100%;
-    background-color: red;
     float: left;
 }
 
 .contacts-nav {
-    background-color: purple;
+
 }
 
 .notification {
-    height: 100px;
-    background-color: pink;
+    height: 90px;
+    background-color: #9DE1FE;
 }
 
 .contacts {
-    height: calc(100% - 200px); /* contacts-nav 100px, notification 100px */
-    background-color: lightgray;
+    height: calc(100% - 150px); /* contacts-nav 60px, notification 90px */
 }
+.search-bar {
+    height: 50px;
+}
+.search-bar input {
+    width: 100%;
+}
+.contacts-list {
+    height: calc(100% - 50px); /* search-bar 50px */
+    overflow-y: auto;
+}
+/* CONTACT CARD --> see all doc classes */
 
 /* #/2-fold EEEEE .contacts-wrapper EEEEE */
 
@@ -81,17 +138,19 @@
 .messages-wrapper {
     width: 70%;
     height: 100%;
-    background-color: green;
     float: left;
 }
 
 .messages-nav {
-    background-color: orange;
+
 }
 
 .messages-container {
-    height: calc(100% - 100px); /* .messages-nav 100px */
-    background-color: yellow;
+    height: calc(100% - 120px); /* messages-nav 60px, messages-bar 60px */
+}
+
+.messages-bar {
+    height: 60px;
 }
 
 /* #/2-fold EEEEE .messages-wrapper EEEEE */
