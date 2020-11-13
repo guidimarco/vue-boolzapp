@@ -372,7 +372,8 @@ var app = new Vue({ // VUE INSTANCE
                 },
                 ]
             },
-        ]
+        ],
+        newMessage: "",
     },
     methods: { // for function
         changeContact: function(clickedIndex) {
@@ -380,6 +381,26 @@ var app = new Vue({ // VUE INSTANCE
         },
         isCurrent: function(currentIndex) {
             return this.contactIndex == currentIndex;
+        },
+        sendMessage: function() {
+            this.userContacts[this.contactIndex].messages.push(
+                { // send new message
+                    data: "10/01/2020 15:30:55",
+                    message: this.newMessage,
+                    status: "sent"
+                }
+            );
+            this.newMessage = ""; // re-clear the input value
+            // contact responde
+            setTimeout(() => { // after 1 sec
+                this.userContacts[this.contactIndex].messages.push(
+                    { // received new message
+                        data: "10/01/2020 15:30:55",
+                        message: "ok",
+                        status: "received"
+                    }
+                );
+            }, 1000);
         }
     }
 
