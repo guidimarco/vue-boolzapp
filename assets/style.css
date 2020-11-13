@@ -290,6 +290,7 @@ h3 {
     /* background-color: rgb(229, 221, 213); */
 }
 .messages-list {
+    min-height: 100%;
     background-color: rgb(229, 221, 213);
     background-image: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
     background-size: auto;
