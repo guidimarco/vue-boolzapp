@@ -66,14 +66,17 @@
                             <div class="icons">
                                 <i class="fas fa-search"></i>
                             </div>
-                            <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat">
+                            <input type="search" name="" value=""
+                            v-model="searContact"
+                            placeholder="Cerca o inizia una nuova chat"
+                            @keyup="changeVisibility">
                         </div><!-- END search bar -->
 
                         <!-- LIST OF CONTACTS -->
                         <ul class="contacts-list">
                             <!-- SINGLE CONTACT-CARD -->
                             <li class="contact-card"
-                            v-for="(contact, index) in userContacts"
+                            v-for="(contact, index) in filteredContacts"
                             :class="{ 'current-contact': isCurrent(index) }"
                             @click="changeContact(index)">
                                 <!-- START CONTACT IMG SX -->
@@ -147,8 +150,7 @@
                             :class="{ 'fa-microphone': isNewMessageEmpty(),
                                 'fa-paper-plane': !isNewMessageEmpty()
                              }"
-                            @click="sendMessage" 
-                            ></i>
+                            @click="sendMessage"></i>
 
                         </div><!-- END RIGHT icons -->
                     </div><!-- END message-bar -->

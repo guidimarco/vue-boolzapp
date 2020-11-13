@@ -203,7 +203,7 @@ var app = new Vue({ // VUE INSTANCE
                 ]
             },
             { // contact
-                name: "Sofia",
+                name: "Marzia",
                 avatar: "_6.jpg",
                 visible: true,
                 messages: [ // messages
@@ -267,7 +267,7 @@ var app = new Vue({ // VUE INSTANCE
                 ]
             },
             { // contact
-                name: "Francesca",
+                name: "Martina",
                 avatar: "_8.jpg",
                 visible: true,
                 messages: [ // messages
@@ -331,7 +331,7 @@ var app = new Vue({ // VUE INSTANCE
                 ]
             },
             { // contact
-                name: "Antonio",
+                name: "Matteo",
                 avatar: "_10.jpg",
                 visible: true,
                 messages: [
@@ -373,7 +373,15 @@ var app = new Vue({ // VUE INSTANCE
                 ]
             },
         ],
+        searContact: "",
         newMessage: "",
+    },
+    computed: {
+        filteredContacts: function() { // visible-contacts
+            return this.userContacts.filter( (currentContact) => {
+                return currentContact.visible;
+            });
+        },
     },
     methods: { // for function
         changeContact: function(clickedIndex) {
@@ -405,7 +413,25 @@ var app = new Vue({ // VUE INSTANCE
         isNewMessageEmpty: function() {
             return this.newMessage == "";
             console.log(this.newMessage == "");
-        }
+        },
+        changeVisibility: function() {
+            let userSearch = this.searContact.toLowerCase();
+            let chartNum = userSearch.length; // max number of chart to confront
+
+            // FOR EVERY FILTERED CONTACT
+            this.userContacts.forEach((currentContact, i) => {
+                // GET FILTERED CONTACT NAME AND LOWERED IT
+                let currentName = currentContact.name.toLowerCase();
+                let parzialName = currentName.substring(0, chartNum); // current-name from 0 to max-chart
+
+                // IF ARE NOT EQUAL --> NOT VISIBLE
+                if (userSearch != parzialName) {
+                    currentContact.visible = false;
+                } else if (userSearch == parzialName) {
+                    currentContact.visible = true;
+                }
+            });
+        },
     }
 
 
