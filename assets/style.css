@@ -228,6 +228,9 @@ h3 {
 .contacts {
     height: calc(100% - 150px); /* contacts-nav 60px, notification 90px */
 }
+.current-contact {
+    background-color: #EBEBEB;
+}
 
 .search-bar {
     height: 50px;

@@ -74,6 +74,36 @@ var app = new Vue({ // VUE INSTANCE
                         message: "Ok fai ammodo",
                         status: "sent"
                     },
+                    {
+                        data: "10/01/2020 16:15:22",
+                        message: "Allora, che mi racconti?",
+                        status: "sent"
+                    },
+                    {
+                        data: "10/01/2020 16:15:22",
+                        message: "Niente di che... poi ieri non sei venuto al pub? Come mai? successo qualcosa... Nicola mi ha accennato",
+                        status: "received"
+                    },
+                    {
+                        data: "10/01/2020 16:15:22",
+                        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        status: "sent"
+                    },
+                    {
+                        data: "10/01/2020 16:15:22",
+                        message: "Capito?",
+                        status: "sent"
+                    },
+                    {
+                        data: "10/01/2020 16:15:22",
+                        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        status: "received"
+                    },
+                    {
+                        data: "10/01/2020 16:15:22",
+                        message: "Ok fai ammodo",
+                        status: "sent"
+                    },
                 ]
             },
             { // contact
@@ -347,6 +377,9 @@ var app = new Vue({ // VUE INSTANCE
     methods: { // for function
         changeContact: function(clickedIndex) {
             this.contactIndex = clickedIndex;
+        },
+        isCurrent: function(currentIndex) {
+            return this.contactIndex == currentIndex;
         }
     }
 

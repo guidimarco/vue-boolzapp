@@ -74,6 +74,7 @@
                             <!-- SINGLE CONTACT-CARD -->
                             <li class="contact-card"
                             v-for="(contact, index) in userContacts"
+                            :class="{ 'current-contact': isCurrent(index) }"
                             @click="changeContact(index)">
                                 <!-- START CONTACT IMG SX -->
                                 <div class="user-img">
