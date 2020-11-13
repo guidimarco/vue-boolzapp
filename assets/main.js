@@ -62,7 +62,7 @@ var app = new Vue({ // VUE INSTANCE
                     {
                         data: "10/01/2020 16:15:22",
                         message: "Come mai? Successo qualcosa?",
-                        status: "send"
+                        status: "sent"
                     },
                     {
                         data: "10/01/2020 16:15:22",
@@ -72,7 +72,7 @@ var app = new Vue({ // VUE INSTANCE
                     {
                         data: "10/01/2020 16:15:22",
                         message: "Ok fai ammodo",
-                        status: "send"
+                        status: "sent"
                     },
                 ]
             },

@@ -139,7 +139,7 @@ h2 { /* Contact-name */
     margin-top: 10px;
     padding: 6px 7px 8px 9px;
 }
-.message-card.send {
+.message-card.sent {
     background-color: #DCF8C6;
     align-self: flex-end;
 }

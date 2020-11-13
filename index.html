@@ -117,7 +117,7 @@
                         <!-- LIST OF MESSAGES -->
                         <ul class="messages-list">
                             <!-- SINGLE MESSAGE-CARD -->
-                            <li class="message-card"
+                            <li class="message-card" :class="message.status"
                             v-for="message in userContacts[contactIndex].messages">
                                 <span class="message-text">
                                     {{ message.message }}
