@@ -345,7 +345,9 @@ var app = new Vue({ // VUE INSTANCE
         ]
     },
     methods: { // for function
-
+        changeContact: function(clickedIndex) {
+            this.contactIndex = clickedIndex;
+        }
     }
 
 

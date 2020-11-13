@@ -72,7 +72,9 @@
                         <!-- LIST OF CONTACTS -->
                         <ul class="contacts-list">
                             <!-- SINGLE CONTACT-CARD -->
-                            <li class="contact-card" v-for="contact in userContacts">
+                            <li class="contact-card"
+                            v-for="(contact, index) in userContacts"
+                            @click="changeContact(index)">
                                 <!-- START CONTACT IMG SX -->
                                 <div class="user-img">
                                     <img :src="'img/' + contact.avatar" :alt="contact.name">
