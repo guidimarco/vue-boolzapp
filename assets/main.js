@@ -401,6 +401,10 @@ var app = new Vue({ // VUE INSTANCE
                     }
                 );
             }, 1000);
+        },
+        isNewMessageEmpty: function() {
+            return this.newMessage == "";
+            console.log(this.newMessage == "");
         }
     }
 

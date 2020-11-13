@@ -143,7 +143,13 @@
 
                         <!-- RIGHT enter -->
                         <div class="icons toggle">
-                            <i class="fas fa-microphone"></i>
+                            <i class="fas"
+                            :class="{ 'fa-microphone': isNewMessageEmpty(),
+                                'fa-paper-plane': !isNewMessageEmpty()
+                             }"
+                            @click="sendMessage" 
+                            ></i>
+
                         </div><!-- END RIGHT icons -->
                     </div><!-- END message-bar -->
 
