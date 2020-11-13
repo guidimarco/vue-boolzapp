@@ -5,6 +5,7 @@ var app = new Vue({ // VUE INSTANCE
             name: "Marco",
             avatar: "_user.jpg"
         },
+        contactIndex: "0", // current-contact-index
         userContacts: [ // all user-contacts
             { // contact
                 name: "Michele",

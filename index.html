@@ -95,11 +95,11 @@
                         <!-- LEFT DIV name and img of current contact -->
                         <div class="current-contact">
                             <div class="user-img">
-                                <img src="img/_user.jpg" alt="">
+                                <img :src="'img/' + userContacts[contactIndex].avatar" :alt="userContacts[contactIndex].name">
                             </div>
 
                             <div class="current-contact-name">
-                                <h2>nome</h2>
+                                <h2>{{ userContacts[contactIndex].name }}</h2>
                             </div>
                         </div><!-- END current contact -->
 
