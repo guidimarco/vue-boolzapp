@@ -1,10 +1,14 @@
 var app = new Vue({ // VUE INSTANCE
     el: "#root",
     data: { // for var
+        user: {
+            name: "Marco",
+            avatar: "_user.jpg"
+        },
         userContacts: [ // all user-contacts
             {
                 name: "Michele",
-                avatar: "img/_1.jpg",
+                avatar: "_1.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -26,7 +30,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Paola",
-                avatar: "img/_2.jpg",
+                avatar: "_2.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -48,7 +52,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Francesco",
-                avatar: "img/_3.jpg",
+                avatar: "_3.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -70,7 +74,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Boolean",
-                avatar: "img/_4.png",
+                avatar: "_4.png",
                 visible: true,
                 messages: [ // messages
                     {
@@ -92,7 +96,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Donato",
-                avatar: "img/_5.jpg",
+                avatar: "_5.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -114,7 +118,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Sofia",
-                avatar: "img/_6.jpg",
+                avatar: "_6.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -136,7 +140,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Marco",
-                avatar: "img/_7.jpg",
+                avatar: "_7.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -158,7 +162,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Francesca",
-                avatar: "img/_8.jpg",
+                avatar: "_8.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -180,7 +184,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Lucia",
-                avatar: "img/_9.jpg",
+                avatar: "_9.jpg",
                 visible: true,
                 messages: [ // messages
                     {
@@ -202,7 +206,7 @@ var app = new Vue({ // VUE INSTANCE
             }, // END contact
             {
                 name: "Antonio",
-                avatar: "img/_10.jpg",
+                avatar: "_10.jpg",
                 visible: true,
                 messages: [ // messages
                     {

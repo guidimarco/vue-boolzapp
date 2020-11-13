@@ -196,7 +196,6 @@ h2 { /* Contact-name */
 .contacts-nav .icons {
     height: 100%;
     float: right;
-    justify-content: flex-end;
 }
 
 .notification {
@@ -235,6 +234,7 @@ h3 {
     justify-content: center;
 }
 .search-bar .icons {
+    font-size: 12px;
     height: 34px;
     background-color: white;
     border-top-left-radius: 17px;

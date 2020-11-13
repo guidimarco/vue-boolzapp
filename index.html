@@ -34,7 +34,7 @@
                     <nav class="app-header contacts-nav">
                         <!-- USER IMG SX -->
                         <div class="user-img">
-                            <img src="img/_user.jpg" alt="">
+                            <img :src="'img/' + user.avatar" :alt="user.name">
                         </div>
 
                         <div class="icons">
@@ -75,7 +75,7 @@
                             <li class="contact-card" v-for="contact in userContacts">
                                 <!-- START CONTACT IMG SX -->
                                 <div class="user-img">
-                                    <img :src="contact.avatar" alt="">
+                                    <img :src="'img/' + contact.avatar" :alt="contact.name">
                                 </div>
                                 <div class="contact-info">
                                     <h2>{{ contact.name }}</h2>
