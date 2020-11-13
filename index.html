@@ -64,12 +64,17 @@
                         <!-- START TOP search bar -->
                         <div class="search-bar input-bar">
                             <div class="icons">
-                                <i class="fas fa-search"></i>
+                                <i class="fas"
+                                    :class="{ 'fa-search': !searchFocus,
+                                        'fa-arrow-left': searchFocus }"
+                                ></i>
                             </div>
                             <input type="search" name="" value=""
                             v-model="searContact"
                             placeholder="Cerca o inizia una nuova chat"
-                            @keyup="changeVisibility">
+                            @keyup="changeVisibility"
+                            @focus="changeFocus"
+                            @blur="changeFocus">
                         </div><!-- END search bar -->
 
                         <!-- LIST OF CONTACTS -->
@@ -99,13 +104,14 @@
                     <!-- START TOP  -->
                     <nav class="app-header messages-nav">
                         <!-- LEFT DIV name and img of current contact -->
-                        <div class="current-contact">
+                        <div class="current-contact"
+                        v-if="!isFilteredEmpty()">
                             <div class="user-img">
-                                <img :src="'img/' + userContacts[contactIndex].avatar" :alt="userContacts[contactIndex].name">
+                                <img :src="'img/' + filteredContacts[contactIndex].avatar" :alt="filteredContacts[contactIndex].name">
                             </div>
 
                             <div class="current-contact-name">
-                                <h2>{{ userContacts[contactIndex].name }}</h2>
+                                <h2>{{ filteredContacts[contactIndex].name }}</h2>
                             </div>
                         </div><!-- END current contact -->
 
@@ -119,10 +125,9 @@
                     <div class="messages-container">
 
                         <!-- LIST OF MESSAGES -->
-                        <ul class="messages-list">
+                        <ul class="messages-list" v-if="!isFilteredEmpty()" >
                             <!-- SINGLE MESSAGE-CARD -->
-                            <li class="message-card" :class="message.status"
-                            v-for="message in userContacts[contactIndex].messages">
+                            <li class="message-card" :class="message.status" v-for="message in filteredContacts[contactIndex].messages">
                                 <span class="message-text">
                                     {{ message.message }}
                                 </span>

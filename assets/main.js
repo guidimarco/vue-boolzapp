@@ -374,6 +374,7 @@ var app = new Vue({ // VUE INSTANCE
             },
         ],
         searContact: "",
+        searchFocus: false,
         newMessage: "",
     },
     computed: {
@@ -414,6 +415,13 @@ var app = new Vue({ // VUE INSTANCE
             return this.newMessage == "";
             console.log(this.newMessage == "");
         },
+        changeFocus: function() {
+            if (this.searchFocus) {
+                this.searchFocus = false;
+            } else {
+                this.searchFocus = true;
+            }
+        },
         changeVisibility: function() {
             let userSearch = this.searContact.toLowerCase();
             let chartNum = userSearch.length; // max number of chart to confront
@@ -432,7 +440,12 @@ var app = new Vue({ // VUE INSTANCE
                 }
             });
         },
+        isFilteredEmpty: function() {
+            if (!this.filteredContacts.length) {
+                return true;
+            } else {
+                return false;
+            }
+        },
     }
-
-
 });

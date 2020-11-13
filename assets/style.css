@@ -272,12 +272,11 @@ h3 {
 .messages-nav {
     border-top-right-radius: 5px;
     border-left: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    justify-content: space-between;
 }
 .messages-nav .current-contact {
     height: 100%;
     display: flex;
+    float: left;
 }
 .messages-nav .current-contact-name {
     display: flex;
@@ -285,6 +284,7 @@ h3 {
 }
 .messages-nav .icons {
     height: 100%;
+    float: right;
 }
 
 .messages-container {
