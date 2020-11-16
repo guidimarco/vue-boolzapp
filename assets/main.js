@@ -375,6 +375,7 @@ var app = new Vue({ // VUE INSTANCE
         ],
         searContact: "",
         isSearching: false,
+        showMsgMenu: false,
         newMessage: "",
     },
     computed: {
@@ -413,27 +414,32 @@ var app = new Vue({ // VUE INSTANCE
             });
         },
         sendMessage: function() {
-            this.userContacts[this.contactIndex].messages.push(
-                { // send new message
-                    data: "10/01/2020 15:30:55",
-                    message: this.newMessage,
-                    status: "sent"
-                }
-            );
-            this.newMessage = ""; // re-clear the input value
-            this.scrollToEnd(); // scroll to btm
-            // contact responde
-            setTimeout(() => { // after 1 sec
+            if (this.newMessage) {
                 this.userContacts[this.contactIndex].messages.push(
-                    { // received new message
+                    { // send new message
                         data: "10/01/2020 15:30:55",
-                        message: "ok",
-                        status: "received"
+                        message: this.newMessage,
+                        status: "sent"
                     }
                 );
-                this.scrollToEnd();
-            }, 1000);
-
+                this.newMessage = ""; // re-clear the input value
+                this.scrollToEnd(); // scroll to btm
+                // contact responde
+                setTimeout(() => { // after 1 sec
+                    this.userContacts[this.contactIndex].messages.push(
+                        { // received new message
+                            data: "10/01/2020 15:30:55",
+                            message: "ok",
+                            status: "received"
+                        }
+                    );
+                    this.scrollToEnd();
+                }, 1000);
+            }
+        },
+        deleteMsg: function(currentMsgIndex) {
+            // this.userContacts[this.contactIndex].messages[currentMsgIndex]; // obj to delete
+            Vue.delete(this.userContacts[this.contactIndex].messages, currentMsgIndex);
         },
     },
     mounted(){

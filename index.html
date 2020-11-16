@@ -5,7 +5,7 @@
         <title>vue-boolzapp</title>
 
         <!-- favicon -->
-        <!-- <link rel="shortcut icon" href=".ico"> -->
+        <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Whatsapp_logo_svg.png/240px-Whatsapp_logo_svg.png">
 
         <!-- font: Cantarell, 400/700 -->
         <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
@@ -128,11 +128,22 @@
                         <!-- LIST OF MESSAGES -->
                         <ul class="messages-list">
                             <!-- SINGLE MESSAGE-CARD -->
-                            <li class="message-card" :class="message.status" v-for="message in userContacts[contactIndex].messages">
+                            <li class="message-card" :class="message.status" v-for="(message, index) in userContacts[contactIndex].messages">
                                 <span class="message-text">
                                     {{ message.message }}
                                 </span>
                                 <span class="time">14:15</span>
+                                <div class="msg-info" @mouseleave="showMsgMenu = false">
+                                    <i class="fas fa-chevron-down"
+                                        @click="showMsgMenu = true"
+                                    ></i>
+                                    <ul class="dropdown-msg-info"
+                                    v-if="showMsgMenu">
+                                        <li>Message info</li>
+                                        <li @click="deleteMsg(index)"
+                                        >Delete message</li>
+                                    </ul>
+                                </div>
                             </li><!-- END SINGLE MESSAGE-CARD -->
                         </ul>
                     </div>

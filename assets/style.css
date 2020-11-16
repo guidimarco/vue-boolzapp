@@ -137,11 +137,12 @@ h2 { /* Contact-name */
 /* #2-fold SSSSS .MESSAGE-CARD SSSSS */
 .message-card {
     display: inline-block;
-    max-width: 80%;
+    max-width: 70%;
     border-radius: 10px;
     background-color: white;
     margin-top: 10px;
     padding: 6px 7px 8px 9px;
+    position: relative;
 }
 .message-card.sent {
     background-color: #DCF8C6;
@@ -157,6 +158,42 @@ h2 { /* Contact-name */
 .message-card .time {
     font-size: 11px;
     color: #00000073;
+}
+
+.message-card .msg-info {
+    display: none;
+    position: absolute;
+    width: 30px; height: 37px;
+    top: 0; right: 0;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+.message-card:hover .msg-info {
+    display: flex;
+    backdrop-filter: blur(3px);
+    color: rgba(0, 0, 0, 0.2);
+}
+.message-card .dropdown-msg-info {
+    position: absolute;
+    bottom: calc(100% - 10px); left: 8px;
+    border-radius: 3px;
+    background-color: white;
+    color: #4a4a4a;
+    padding: 9px 0;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26),0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+.message-card.sent .dropdown-msg-info {
+    left: unset; right: 8px;
+}
+.message-card .dropdown-msg-info li {
+    font-size: 15.5px;
+    width: 100%;
+    padding: 10px 20px 10px 15px;
+}
+.message-card .dropdown-msg-info li:hover {
+    background-color: rgb(242, 242, 242);
 }
 
 /* #/2-fold> EEEEE .MESSAGE-CARD EEEEE */
