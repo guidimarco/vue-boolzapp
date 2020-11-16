@@ -440,6 +440,8 @@ var app = new Vue({ // VUE INSTANCE
         deleteMsg: function(currentMsgIndex) {
             // this.userContacts[this.contactIndex].messages[currentMsgIndex]; // obj to delete
             Vue.delete(this.userContacts[this.contactIndex].messages, currentMsgIndex);
+
+            this.showMsgMenu = false; // cause remain opened
         },
     },
     mounted(){
