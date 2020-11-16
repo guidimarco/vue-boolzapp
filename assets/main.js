@@ -1,11 +1,20 @@
 var app = new Vue({ // VUE INSTANCE
     el: "#root",
-    data: { // for var
+    data: {
+        // VAR
+        contactIndex: "0", // current-contact-index
+        searContact: "",
+        isSearching: false,
+        newMessage: "",
+        showMsgMenu: false,
+
+        // OBJ
         user: {
             name: "Marco",
             avatar: "_user.jpg"
         },
-        contactIndex: "0", // current-contact-index
+
+        // ARRAY
         userContacts: [ // all user-contacts
             { // contact
                 name: "Michele",
@@ -13,18 +22,18 @@ var app = new Vue({ // VUE INSTANCE
                 visible: true,
                 messages: [ // messages
                     {
-                        data: "10/01/2020 15:30:55",
+                        data: "16/11/2020 08:58:45",
                         message: "Hai portato a spasso il cane?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 15:50:00",
+                        data: "16/11/2020 08:59:32",
                         message: "Ricordati di dargli da mangiare",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
-                        message: "Tutto fatto!",
+                        data: "16/11/2020 10:11:23",
+                        message: "Si tranquillo...",
                         status: "received"
                     },
                 ]
@@ -35,72 +44,72 @@ var app = new Vue({ // VUE INSTANCE
                 visible: true,
                 messages: [ // messages
                     {
-                        data: "10/01/2020 15:30:55",
+                        data: "15/11/2020 12:21:21",
                         message: "Ciao Paola come stai?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 15:50:00",
+                        data: "15/11/2020 12:22:01",
                         message: "Hai fatto quello che ti ho detto di fare?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 13:02:01",
                         message: "Bene grazie",
                         status: "received"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 13:02:55",
                         message: "Te?",
                         status: "received"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 13:04:56",
                         message: "Non ce l'ho fatta, sono dovuta andare dal medico...",
                         status: "received"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 14:22:36",
                         message: "Come mai? Successo qualcosa?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 14:44:36",
                         message: "Tranquillo tutto ok, se ne parla domani...",
                         status: "received"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 14:47:47",
                         message: "Ok fai ammodo",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 14:48:26",
                         message: "Allora, che mi racconti?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 14:48:55",
                         message: "Niente di che... poi ieri non sei venuto al pub? Come mai? successo qualcosa... Nicola mi ha accennato",
                         status: "received"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 20:00:00",
                         message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 20:01:00",
                         message: "Capito?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 20:02:00",
                         message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                         status: "received"
                     },
                     {
-                        data: "10/01/2020 16:15:22",
+                        data: "15/11/2020 20:04:00",
                         message: "Ok fai ammodo",
                         status: "sent"
                     },
@@ -186,19 +195,19 @@ var app = new Vue({ // VUE INSTANCE
                 visible: true,
                 messages: [ // messages
                     {
-                        data: "10/01/2020 15:30:55",
-                        message: "Hai portato a spasso il cane?",
+                        data: "01/01/2020 12:30:55",
+                        message: "Hey com'è?",
                         status: "sent"
                     },
                     {
-                        data: "10/01/2020 15:50:00",
-                        message: "Ricordati di dargli da mangiare",
-                        status: "sent"
-                    },
-                    {
-                        data: "10/01/2020 16:15:22",
-                        message: "Tutto fatto!",
+                        data: "01/01/2020 12:35:00",
+                        message: "Tutto bene te?",
                         status: "received"
+                    },
+                    {
+                        data: "01/01/2020 12:35:00",
+                        message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        status: "sent"
                     },
                 ]
             },
@@ -373,13 +382,11 @@ var app = new Vue({ // VUE INSTANCE
                 ]
             },
         ],
-        searContact: "",
-        isSearching: false,
-        showMsgMenu: false,
-        newMessage: "",
     },
     computed: {
         // empty
+        // this.userContacts[0].messages[0].data
+        // dayjs(this.userContacts[0].messages[0].data).format()
     },
     methods: { // for function
         changeContact: function(clickedIndex) {
@@ -442,6 +449,23 @@ var app = new Vue({ // VUE INSTANCE
             Vue.delete(this.userContacts[this.contactIndex].messages, currentMsgIndex);
 
             this.showMsgMenu = false; // cause remain opened
+        },
+        printLastMsg: function(currentContact) {
+            let lastMsgIndex = currentContact.messages.length - 1;
+
+            let lastMsg = currentContact.messages[lastMsgIndex].message; // last msg
+
+            return lastMsg.substring(0, 25);
+        },
+        printLastMsgHour: function(currentContact) {
+            let lastMsgIndex = currentContact.messages.length - 1;
+
+            let lastMsgDate = currentContact.messages[lastMsgIndex].data; // last msg
+
+            return this.printHour(lastMsgDate);
+        },
+        printHour: function(date) {
+            return dayjs(date, "DD/MM/YYYY HH:mm:ss", "en").format('HH:mm');
         },
     },
     mounted(){
