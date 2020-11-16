@@ -93,6 +93,10 @@ h3 notification
 .contact-card {
     height: 73px;
     cursor: pointer;
+    display: none;
+}
+.contact-card.visible {
+    display: block;
 }
 .contact-card:hover {
     background-color: rgb(242, 242, 242);

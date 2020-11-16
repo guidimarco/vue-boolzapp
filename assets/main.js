@@ -374,15 +374,11 @@ var app = new Vue({ // VUE INSTANCE
             },
         ],
         searContact: "",
-        searchFocus: false,
+        isSearching: false,
         newMessage: "",
     },
     computed: {
-        filteredContacts: function() { // visible-contacts
-            return this.userContacts.filter( (currentContact) => {
-                return currentContact.visible;
-            });
-        },
+        // empty
     },
     methods: { // for function
         changeContact: function(clickedIndex) {
@@ -396,7 +392,25 @@ var app = new Vue({ // VUE INSTANCE
             setTimeout(() => {
                 var container = this.$el.querySelector(".messages-container");
                 container.scrollTop = container.scrollHeight;
-            }, 50);
+            }, 0);
+        },
+        changeVisibility: function() {
+            let userSearch = this.searContact.toLowerCase();
+            let chartNum = userSearch.length; // max number of chart to confront
+
+            // FOR EVERY FILTERED CONTACT
+            this.userContacts.forEach((currentContact, i) => {
+                // GET FILTERED CONTACT NAME AND LOWERED IT
+                let currentName = currentContact.name.toLowerCase();
+                let parzialName = currentName.substring(0, chartNum); // current-name from 0 to max-chart
+
+                // IF ARE NOT EQUAL --> NOT VISIBLE
+                if (userSearch != parzialName) {
+                    currentContact.visible = false;
+                } else if (userSearch == parzialName) {
+                    currentContact.visible = true;
+                }
+            });
         },
         sendMessage: function() {
             this.userContacts[this.contactIndex].messages.push(
@@ -421,44 +435,15 @@ var app = new Vue({ // VUE INSTANCE
             }, 1000);
 
         },
-        isNewMessageEmpty: function() {
-            return this.newMessage == "";
-            console.log(this.newMessage == "");
-        },
-        changeFocus: function() {
-            if (this.searchFocus) {
-                this.searchFocus = false;
-            } else {
-                this.searchFocus = true;
-            }
-        },
-        changeVisibility: function() {
-            let userSearch = this.searContact.toLowerCase();
-            let chartNum = userSearch.length; // max number of chart to confront
-
-            // FOR EVERY FILTERED CONTACT
-            this.userContacts.forEach((currentContact, i) => {
-                // GET FILTERED CONTACT NAME AND LOWERED IT
-                let currentName = currentContact.name.toLowerCase();
-                let parzialName = currentName.substring(0, chartNum); // current-name from 0 to max-chart
-
-                // IF ARE NOT EQUAL --> NOT VISIBLE
-                if (userSearch != parzialName) {
-                    currentContact.visible = false;
-                } else if (userSearch == parzialName) {
-                    currentContact.visible = true;
-                }
-            });
-        },
-        isFilteredEmpty: function() {
-            if (!this.filteredContacts.length) {
-                return true;
-            } else {
-                return false;
-            }
-        },
     },
     mounted(){
+        // for scroll the first chat
         this.scrollToEnd();
+    },
+    watch: {
+        // for change contacts visibility
+        searContact: function () {
+            this.changeVisibility();
+        }
     },
 });

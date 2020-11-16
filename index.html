@@ -65,24 +65,24 @@
                         <div class="search-bar input-bar">
                             <div class="icons">
                                 <i class="fas"
-                                    :class="{ 'fa-search': !searchFocus,
-                                        'fa-arrow-left': searchFocus }"
+                                    :class="{ 'fa-search': !isSearching,
+                                        'fa-arrow-left': isSearching }"
                                 ></i>
                             </div>
-                            <input type="search" name="" value=""
+                            <input type="search" name=""
                             v-model="searContact"
+                            v-on:change="changeVisibility"
                             placeholder="Cerca o inizia una nuova chat"
-                            @keyup="changeVisibility"
-                            @focus="changeFocus"
-                            @blur="changeFocus">
+                            @focus="isSearching = true"
+                            @blur="isSearching = false">
                         </div><!-- END search bar -->
 
                         <!-- LIST OF CONTACTS -->
                         <ul class="contacts-list">
                             <!-- SINGLE CONTACT-CARD -->
                             <li class="contact-card"
-                            v-for="(contact, index) in filteredContacts"
-                            :class="{ 'current-contact': isCurrent(index) }"
+                            v-for="(contact, index) in userContacts"
+                            :class="{ 'current-contact': isCurrent(index), 'visible': contact.visible }"
                             @click="changeContact(index)">
                                 <!-- START CONTACT IMG SX -->
                                 <div class="user-img">
@@ -104,15 +104,14 @@
                     <!-- START TOP  -->
                     <nav class="app-header messages-nav">
                         <!-- LEFT DIV name and img of current contact -->
-                        <div class="current-contact"
-                        v-if="!isFilteredEmpty()">
+                        <div class="current-contact">
                             <div class="user-img">
-                                <img :src="'img/' + filteredContacts[contactIndex].avatar" :alt="filteredContacts[contactIndex].name">
+                                <img :src="'img/' + userContacts[contactIndex].avatar" :alt="userContacts[contactIndex].name">
                             </div>
 
                             <div class="current-contact-name">
                                 <h2>
-                                    {{ filteredContacts[contactIndex].name }}
+                                    {{ userContacts[contactIndex].name }}
                                 </h2>
                             </div>
                         </div><!-- END current contact -->
@@ -127,9 +126,9 @@
                     <div class="messages-container">
 
                         <!-- LIST OF MESSAGES -->
-                        <ul class="messages-list" v-if="!isFilteredEmpty()">
+                        <ul class="messages-list">
                             <!-- SINGLE MESSAGE-CARD -->
-                            <li class="message-card" :class="message.status" v-for="message in filteredContacts[contactIndex].messages">
+                            <li class="message-card" :class="message.status" v-for="message in userContacts[contactIndex].messages">
                                 <span class="message-text">
                                     {{ message.message }}
                                 </span>
@@ -153,10 +152,8 @@
 
                         <!-- RIGHT enter -->
                         <div class="icons toggle">
-                            <i class="fas"
-                            :class="{ 'fa-microphone': isNewMessageEmpty(),
-                                'fa-paper-plane': !isNewMessageEmpty()
-                             }"
+                            <i class="fas "
+                            :class="[ newMessage ? 'fa-paper-plane': 'fa-microphone']"
                             @click="sendMessage"></i>
 
                         </div><!-- END RIGHT icons -->
