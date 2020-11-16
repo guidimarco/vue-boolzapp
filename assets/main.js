@@ -387,9 +387,16 @@ var app = new Vue({ // VUE INSTANCE
     methods: { // for function
         changeContact: function(clickedIndex) {
             this.contactIndex = clickedIndex;
+            this.scrollToEnd();
         },
         isCurrent: function(currentIndex) {
             return this.contactIndex == currentIndex;
+        },
+        scrollToEnd: function() {
+            setTimeout(() => {
+                var container = this.$el.querySelector(".messages-container");
+                container.scrollTop = container.scrollHeight;
+            }, 50);
         },
         sendMessage: function() {
             this.userContacts[this.contactIndex].messages.push(
@@ -400,6 +407,7 @@ var app = new Vue({ // VUE INSTANCE
                 }
             );
             this.newMessage = ""; // re-clear the input value
+            this.scrollToEnd(); // scroll to btm
             // contact responde
             setTimeout(() => { // after 1 sec
                 this.userContacts[this.contactIndex].messages.push(
@@ -409,7 +417,9 @@ var app = new Vue({ // VUE INSTANCE
                         status: "received"
                     }
                 );
+                this.scrollToEnd();
             }, 1000);
+
         },
         isNewMessageEmpty: function() {
             return this.newMessage == "";
@@ -447,5 +457,8 @@ var app = new Vue({ // VUE INSTANCE
                 return false;
             }
         },
-    }
+    },
+    mounted(){
+        this.scrollToEnd();
+    },
 });

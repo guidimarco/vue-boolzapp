@@ -127,7 +127,7 @@
                     <div class="messages-container">
 
                         <!-- LIST OF MESSAGES -->
-                        <ul class="messages-list" v-if="!isFilteredEmpty()" >
+                        <ul class="messages-list" v-if="!isFilteredEmpty()">
                             <!-- SINGLE MESSAGE-CARD -->
                             <li class="message-card" :class="message.status" v-for="message in filteredContacts[contactIndex].messages">
                                 <span class="message-text">

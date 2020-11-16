@@ -138,12 +138,10 @@ h2 { /* Contact-name */
     background-color: white;
     margin-top: 10px;
     padding: 6px 7px 8px 9px;
-    float: left;
-    clear: both;
 }
 .message-card.sent {
     background-color: #DCF8C6;
-    float: right;
+    align-self: flex-end;
 }
 
 .message-card .message-text {
@@ -305,6 +303,10 @@ h3 {
     flex: 1 0 auto;
     backdrop-filter: invert(85%);
     padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 
