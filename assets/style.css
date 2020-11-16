@@ -138,10 +138,12 @@ h2 { /* Contact-name */
     background-color: white;
     margin-top: 10px;
     padding: 6px 7px 8px 9px;
+    float: left;
+    clear: both;
 }
 .message-card.sent {
     background-color: #DCF8C6;
-    align-self: flex-end;
+    float: right;
 }
 
 .message-card .message-text {
@@ -289,22 +291,22 @@ h3 {
 
 .messages-container {
     height: calc(100% - 120px); /* messages-nav 60px, messages-bar 60px */
-    overflow-y: auto;
-    /* background-color: rgb(229, 221, 213); */
-}
-.messages-list {
-    min-height: 100%;
-    background-color: rgb(229, 221, 213);
+    background-color: #1a222a;
     background-image: url(https://web.whatsapp.com/img/bg-chat-tile-light_686b98c9fdffef3f63127759e2057750.png);
     background-size: auto;
     background-attachment: fixed;
     background-repeat: repeat;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    overflow-y: auto;
+}
+.messages-list {
+    min-height: 100%;
+    flex: 1 0 auto;
+    backdrop-filter: invert(85%);
     padding: 10px 20px;
 }
+
 
 .messages-bar {
     height: 60px;
