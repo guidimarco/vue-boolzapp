@@ -3,7 +3,7 @@ var app = new Vue({ // VUE INSTANCE
     data: {
         // VAR
         contactIndex: "0", // current-contact-index
-        searContact: "",
+        userSearch: "",
         isSearching: false,
         newMessage: "",
         showMsgMenu: false,
@@ -401,19 +401,18 @@ var app = new Vue({ // VUE INSTANCE
             });
         },
         changeVisibility: function() {
-            let userSearch = this.searContact.toLowerCase();
-            let chartNum = userSearch.length; // max number of chart to confront
+            let currentSearch = this.userSearch.toLowerCase(); // get user's current search
 
             // FOR EVERY FILTERED CONTACT
             this.userContacts.forEach((currentContact, i) => {
                 // GET FILTERED CONTACT NAME AND LOWERED IT
                 let currentName = currentContact.name.toLowerCase();
-                let parzialName = currentName.substring(0, chartNum); // current-name from 0 to max-chart
 
-                // IF ARE NOT EQUAL --> NOT VISIBLE
-                if (userSearch != parzialName) {
+                if (!currentName.includes(currentSearch)) {
+                    // IF user search it's not includes
                     currentContact.visible = false;
-                } else if (userSearch == parzialName) {
+                } else if (currentName.includes(currentSearch)) {
+                    // IF user search it's includes
                     currentContact.visible = true;
                 }
             });
@@ -480,7 +479,7 @@ var app = new Vue({ // VUE INSTANCE
     },
     watch: {
         // for change contacts visibility
-        searContact: function () {
+        userSearch: function () {
             this.changeVisibility();
         }
     },
