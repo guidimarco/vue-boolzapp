@@ -384,9 +384,7 @@ var app = new Vue({ // VUE INSTANCE
         ],
     },
     computed: {
-        // empty
-        // this.userContacts[0].messages[0].data
-        // dayjs(this.userContacts[0].messages[0].data).format()
+
     },
     methods: { // for function
         changeContact: function(clickedIndex) {
@@ -421,28 +419,36 @@ var app = new Vue({ // VUE INSTANCE
             });
         },
         sendMessage: function() {
+            // if newMessage it's empty --> end function
+
             if (this.newMessage) {
-                this.userContacts[this.contactIndex].messages.push(
-                    { // send new message
-                        data: "10/01/2020 15:30:55",
-                        message: this.newMessage,
-                        status: "sent"
-                    }
-                );
+                // if newMessage it's not empty
+                // LOCAL VAR
+                let currentContact = this.userContacts[this.contactIndex];
+                let newMsgObj = {
+                    data: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: this.newMessage,
+                    status: "sent"
+                };
+
+                currentContact.messages.push(newMsgObj); // push new msg
                 this.newMessage = ""; // re-clear the input value
                 this.scrollToEnd(); // scroll to btm
+
                 // contact responde
-                setTimeout(() => { // after 1 sec
-                    this.userContacts[this.contactIndex].messages.push(
-                        { // received new message
-                            data: "10/01/2020 15:30:55",
-                            message: "ok",
-                            status: "received"
-                        }
-                    );
-                    this.scrollToEnd();
+                setTimeout(() => {
+                    // LOCAL VAR
+                    let msgReply = {
+                        data: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        message: "ok",
+                        status: "received"
+                    };
+
+                    currentContact.messages.push(msgReply); // push reply
+                    this.scrollToEnd(); // scroll to btm
                 }, 1000);
             }
+
         },
         deleteMsg: function(currentMsgIndex) {
             // this.userContacts[this.contactIndex].messages[currentMsgIndex]; // obj to delete
