@@ -450,10 +450,13 @@ var app = new Vue({ // VUE INSTANCE
 
         },
         deleteMsg: function(currentMsgIndex) {
-            // this.userContacts[this.contactIndex].messages[currentMsgIndex]; // obj to delete
-            Vue.delete(this.userContacts[this.contactIndex].messages, currentMsgIndex);
+            // LOCAL VAR
+            allContactMsgs = this.userContacts[this.contactIndex].messages; // current user's messages array
+            msgToDelete = allContactMsgs[currentMsgIndex]; // msg clicked
 
-            this.showMsgMenu = false; // cause remain opened
+            msgToDelete.status = "delete"; // change status
+
+            this.showMsgMenu = false; // hidden the menu
         },
         printLastMsg: function(currentContact) {
             let lastMsgIndex = currentContact.messages.length - 1;

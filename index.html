@@ -139,7 +139,9 @@
                         <!-- LIST OF MESSAGES -->
                         <ul class="messages-list">
                             <!-- SINGLE MESSAGE-CARD -->
-                            <li class="message-card" :class="message.status" v-for="(message, index) in userContacts[contactIndex].messages"
+                            <li class="message-card"
+                            :class="message.status"
+                            v-for="(message, index) in userContacts[contactIndex].messages"
                             @click="printHour()">
                                 <span class="message-text">
                                     {{ message.message }}
