@@ -389,16 +389,9 @@ var app = new Vue({ // VUE INSTANCE
     methods: { // for function
         changeContact: function(clickedIndex) {
             this.contactIndex = clickedIndex;
-            this.scrollChat();
         },
         isCurrent: function(currentIndex) {
             return this.contactIndex == currentIndex;
-        },
-        scrollChat: function() {
-            Vue.nextTick(() => {
-                var container = this.$el.querySelector(".messages-container");
-                container.scrollTop = container.scrollHeight;
-            });
         },
         changeVisibility: function() {
             let currentSearch = this.userSearch.toLowerCase(); // get user's current search
@@ -432,7 +425,6 @@ var app = new Vue({ // VUE INSTANCE
 
                 currentContact.messages.push(newMsgObj); // push new msg
                 this.newMessage = ""; // re-clear the input value
-                this.scrollChat(); // scroll to btm
 
                 // contact responde
                 setTimeout(() => {
@@ -444,7 +436,6 @@ var app = new Vue({ // VUE INSTANCE
                     };
 
                     currentContact.messages.push(msgReply); // push reply
-                    this.scrollChat(); // scroll to btm
                 }, 1000);
             }
 
@@ -476,14 +467,26 @@ var app = new Vue({ // VUE INSTANCE
             return dayjs(date, "DD/MM/YYYY HH:mm:ss", "en").format('HH:mm');
         },
     },
-    mounted(){
-        // for scroll the first chat
-        this.scrollChat();
-    },
     watch: {
         // for change contacts visibility
         userSearch: function () {
             this.changeVisibility();
+        }
+    },
+    directives: {
+        autoscroll: {
+            inserted: function(el) {
+                // console.log(el);
+                Vue.nextTick(() => {
+                    el.scrollTop = el.scrollHeight;
+                });
+            },
+            update: function(el) {
+                // console.log(el);
+                Vue.nextTick(() => {
+                    el.scrollTop = el.scrollHeight;
+                });
+            },
         }
     },
 });
