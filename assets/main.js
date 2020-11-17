@@ -389,16 +389,16 @@ var app = new Vue({ // VUE INSTANCE
     methods: { // for function
         changeContact: function(clickedIndex) {
             this.contactIndex = clickedIndex;
-            this.scrollToEnd();
+            this.scrollChat();
         },
         isCurrent: function(currentIndex) {
             return this.contactIndex == currentIndex;
         },
-        scrollToEnd: function() {
-            setTimeout(() => {
+        scrollChat: function() {
+            Vue.nextTick(() => {
                 var container = this.$el.querySelector(".messages-container");
                 container.scrollTop = container.scrollHeight;
-            }, 0);
+            });
         },
         changeVisibility: function() {
             let userSearch = this.searContact.toLowerCase();
@@ -433,7 +433,7 @@ var app = new Vue({ // VUE INSTANCE
 
                 currentContact.messages.push(newMsgObj); // push new msg
                 this.newMessage = ""; // re-clear the input value
-                this.scrollToEnd(); // scroll to btm
+                this.scrollChat(); // scroll to btm
 
                 // contact responde
                 setTimeout(() => {
@@ -445,7 +445,7 @@ var app = new Vue({ // VUE INSTANCE
                     };
 
                     currentContact.messages.push(msgReply); // push reply
-                    this.scrollToEnd(); // scroll to btm
+                    this.scrollChat(); // scroll to btm
                 }, 1000);
             }
 
@@ -476,7 +476,7 @@ var app = new Vue({ // VUE INSTANCE
     },
     mounted(){
         // for scroll the first chat
-        this.scrollToEnd();
+        this.scrollChat();
     },
     watch: {
         // for change contacts visibility
